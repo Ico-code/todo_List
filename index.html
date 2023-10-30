@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <script src="./js/scripts.js"></script>
+  </head>
+  <body onload="initialLoad(false)">
+    <header>
+      <nav class="d-flex flex-row">
+        <div class="logo">
+          <p id="logoText">Logo</p>
+        </div>
+        <button class="btn hoverButtonGreen py-0 ms-5 text-white" onclick="initialLoad(true)">Reset localStorage</button>
+      </nav>
+    </header>
+    <article id="content">
+      <section id="listContainer" class="h-100">
+        <div class="d-flex flex-row">
+          <h2>Lists</h2>
+          <button class="ms-auto hoverButtonGreen btn" onclick="addNewList()">Add List</button>
+        </div>
+        <hr/>
+        <!-- <div class="listBody d-flex flex-row">
+                    <div class="listOpener" onclick="openSelectedList(2)">
+                        <h1 class="listTitle">Title</h1>
+                        <p class="listDescription">Short description of the list</p>    
+                    </div>
+                    <button class="ms-auto hoverButtonRed btn">Remove</button>
+                </div>     -->
+      </section>
+      <section id="selectedList">
+        <div class="d-flex flex-row align-content-center">
+          <h1 id="selectedTitle" class="text-white">List Title</h1>
+          <button
+            id="addTask"
+            class="ms-auto m-1 hoverButtonGreen btn text-white"
+            onclick="addNewListItem()"
+          >
+            Add Task
+          </button>
+        </div>
+        <hr />
+        <form id="listItems" onsubmit="return false">
+          <!-- <div class="listItem">
+                    <input type="checkbox" name="milk" class="checkbox"/>
+                    <label for="milk" class="itemTitle">Milk</label>
+                    <button class="hoverButtonRed btn">Close</button>
+                    <div>
+                        <p>Description:</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nisi!</p>    
+                    </div>
+                </div> -->
+        </form>
+      </section>
+    </article>
+  </body>
+</html>

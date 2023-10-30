@@ -1,0 +1,118 @@
+#logoText {
+  color: white;
+  font-size: 700;
+  font-size: 1.5rem;
+}
+header {
+  min-height: 5vh;
+}
+#listContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  max-width: 50%;
+  width: 50%;
+  min-height: 93vh;
+}
+#selectedList {
+  max-width: 50%;
+  width: 50%;
+  padding: 5px;
+  background-color: rgb(255, 188, 63);
+}
+#selectedTitle {
+    font-size: 2em;
+}
+.listBody {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.listTitle {
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0px;
+  font-size: 1.2rem;
+}
+.listDescription {
+  width: 100%;
+  font-size: 0.8rem;
+}
+header {
+  background-color: orange;
+  padding: 20px;
+}
+#logoText {
+  margin: 0px;
+}
+body {
+  margin: 0px;
+}
+article {
+  display: flex;
+  flex-direction: row;
+}
+.hoverButtonGreen:hover {
+  background-color: rgb(108, 206, 23);
+}
+.hoverButtonRed:hover {
+  background-color: rgb(255, 64, 0);
+}
+.hoverButtonGreen,.hoverButtonRed {
+  transition: background-color 0.25s;
+  margin-left: 5px;
+}
+.listItem {
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.selectedListItem {
+  background-color: rgb(180, 180, 180);
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.checkbox{
+  margin: 0px 5px;
+}
+.btn {
+    vertical-align: baseline !important;
+}
+p {
+    margin-bottom: 0px;
+}
+.itemTitle{
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.listOpener{
+  transition: background-color 0.25s;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+.listOpener:hover{
+  background-color: rgb(255, 199, 95);
+}
+.clicker{
+  cursor: pointer;
+}
+.warningText{
+  color: red;
+}
+#warningTextTitleList,#warningTextDescList,#warningTextTitleTask,#warningTextDescTask{
+  line-height: 1em;
+  padding-bottom: 5px;  
+}
+.disabled{
+  background-color: #969696;
+}
+textarea{
+  min-width: 100%;
+}
