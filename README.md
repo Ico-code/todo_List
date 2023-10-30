@@ -11,4 +11,4 @@ Github:
 Netlify:
 
 Evaluation:
-i would give this project a 25/30 pts, since it think it meets the requierments and has a little bit of extra, and i think the ui is decent.
+i would give this project a 25/30 pts, since it think it meets the requierments and has a little bit of extra, and i also think the ui is decent enough for that.
