@@ -123,16 +123,21 @@ function addNewList() {
   listTitle.innerHTML = "List Title";
   acceptChangesButton.innerHTML = "Accept";
   removeChangesButton.innerHTML = "Remove";
-  warningText.innerHTML="The title needs to be between 4 and 40 characters long"
-  warningTextdesc.innerHTML="The description needs to be between 4 and 600 characters long"
+  warningText.innerHTML =
+    "The title needs to be between 4 and 40 characters long";
+  warningTextdesc.innerHTML =
+    "The description needs to be between 4 and 600 characters long";
   //sets class and onclick
-  warningText.setAttribute("class","warningText")
-  warningTextdesc.setAttribute("class","warningText")
-  warningText.setAttribute("id","warningTextTitleList")
-  warningTextdesc.setAttribute("id","warningTextDescList")
-  warningText.setAttribute("style","display:none")
-  warningTextdesc.setAttribute("style","display:none")
-  acceptChangesButton.setAttribute("class", "ms-auto hoverButtonGreen btn disabled");
+  warningText.setAttribute("class", "warningText");
+  warningTextdesc.setAttribute("class", "warningText");
+  warningText.setAttribute("id", "warningTextTitleList");
+  warningTextdesc.setAttribute("id", "warningTextDescList");
+  warningText.setAttribute("style", "display:none");
+  warningTextdesc.setAttribute("style", "display:none");
+  acceptChangesButton.setAttribute(
+    "class",
+    "ms-auto hoverButtonGreen btn disabled"
+  );
   acceptChangesButton.setAttribute("id", "listFormButton");
   removeChangesButton.setAttribute("class", "ms-auto hoverButtonRed btn");
   listBody.setAttribute("class", "listBody d-flex flex-row");
@@ -340,15 +345,17 @@ function addNewListItem() {
   acceptChangesButton.innerHTML = "Accept";
   removeChangesButton.innerHTML = "Remove";
   itemLabel.innerHTML = "Add name:";
-  warningText.innerHTML="The title needs to be between 4 and 40 characters long"
-  warningTextdesc.innerHTML="The description needs to be between 4 and 600 characters long"
+  warningText.innerHTML =
+    "The title needs to be between 4 and 40 characters long";
+  warningTextdesc.innerHTML =
+    "The description needs to be between 4 and 600 characters long";
   // //sets class and onclick
-  warningText.setAttribute("class","warningText")
-  warningTextdesc.setAttribute("class","warningText")
-  warningText.setAttribute("style","display:none")
-  warningTextdesc.setAttribute("style","display:none")
-  warningText.setAttribute("id","warningTextTitleTask")
-  warningTextdesc.setAttribute("id","warningTextDescTask")
+  warningText.setAttribute("class", "warningText");
+  warningTextdesc.setAttribute("class", "warningText");
+  warningText.setAttribute("style", "display:none");
+  warningTextdesc.setAttribute("style", "display:none");
+  warningText.setAttribute("id", "warningTextTitleTask");
+  warningTextdesc.setAttribute("id", "warningTextDescTask");
   acceptChangesButton.setAttribute("class", "hoverButtonGreen btn disabled");
   acceptChangesButton.setAttribute("id", "taskFormButton");
   removeChangesButton.setAttribute("class", "hoverButtonRed btn");
@@ -655,7 +662,7 @@ function checkForErrors(itemID) {
   let descriptionCorrect = true;
   // console.log("Hello World")
 
-  if(itemID=="listForm"){
+  if (itemID == "listForm") {
     //get data
     let newItem = {
       id: itemID,
@@ -664,34 +671,37 @@ function checkForErrors(itemID) {
     };
 
     //check for errors
-    if(newItem.title.length<4 || newItem.title>40){
-      titleCorrect=false
+    if (newItem.title.length < 4 || newItem.title > 40) {
+      titleCorrect = false;
     }
-    if(newItem.description.length<4 || newItem.description.length>600){
-      descriptionCorrect=false
+    if (newItem.description.length < 4 || newItem.description.length > 600) {
+      descriptionCorrect = false;
     }
     // console.log(titleCorrect,descriptionCorrect)
 
     //if there are errors then show them to the user
-    if(titleCorrect==false){
-      document.getElementById("newListTitle").style.border="red solid 1px"
-      document.getElementById("warningTextTitleList").style.display="block"
-    }else if(titleCorrect==true){
-      document.getElementById("newListTitle").style.border="black solid 1px"
-      document.getElementById("warningTextTitleList").style.display="none"
+    if (titleCorrect == false) {
+      document.getElementById("newListTitle").style.border = "red solid 1px";
+      document.getElementById("warningTextTitleList").style.display = "block";
+    } else if (titleCorrect == true) {
+      document.getElementById("newListTitle").style.border = "black solid 1px";
+      document.getElementById("warningTextTitleList").style.display = "none";
     }
-    if(descriptionCorrect==false){
-      document.getElementById("newListDescription").style.border="red solid 1px"
-      document.getElementById("warningTextDescList").style.display="block"
-    }else if(descriptionCorrect==true){
-      document.getElementById("newListDescription").style.border="black solid 1px"
-      document.getElementById("warningTextDescList").style.display="none"
+    if (descriptionCorrect == false) {
+      document.getElementById("newListDescription").style.border =
+        "red solid 1px";
+      document.getElementById("warningTextDescList").style.display = "block";
+    } else if (descriptionCorrect == true) {
+      document.getElementById("newListDescription").style.border =
+        "black solid 1px";
+      document.getElementById("warningTextDescList").style.display = "none";
     }
-    if(descriptionCorrect&&titleCorrect){
-      document.getElementById("listFormButton").setAttribute("class","hoverButtonGreen btn")
+    if (descriptionCorrect && titleCorrect) {
+      document
+        .getElementById("listFormButton")
+        .setAttribute("class", "hoverButtonGreen btn");
     }
-  }
-  else if(itemID=="taskForm"){
+  } else if (itemID == "taskForm") {
     //get data
     let newItem = {
       id: itemID,
@@ -700,75 +710,84 @@ function checkForErrors(itemID) {
     };
 
     //check for errors
-    if(newItem.title.length<4 || newItem.title>40){
-      titleCorrect=false
+    if (newItem.title.length < 4 || newItem.title > 40) {
+      titleCorrect = false;
     }
-    if(newItem.description.length<4 || newItem.description.length>600){
-      descriptionCorrect=false
+    if (newItem.description.length < 4 || newItem.description.length > 600) {
+      descriptionCorrect = false;
     }
     // console.log(titleCorrect,descriptionCorrect)
 
     //if there are errors then show them to the user
-    if(titleCorrect==false){
-      document.getElementById("newTaskName").style.border="red solid 1px"
-      document.getElementById("warningTextTitleTask").style.display="block"
+    if (titleCorrect == false) {
+      document.getElementById("newTaskName").style.border = "red solid 1px";
+      document.getElementById("warningTextTitleTask").style.display = "block";
       // console.log("Hello!")
-    }else if(titleCorrect==true){
-      document.getElementById("newTaskName").style.border="black solid 1px"
-      document.getElementById("warningTextTitleTask").style.display="none"
+    } else if (titleCorrect == true) {
+      document.getElementById("newTaskName").style.border = "black solid 1px";
+      document.getElementById("warningTextTitleTask").style.display = "none";
     }
-    if(descriptionCorrect==false){
-      document.getElementById("newDescription").style.border="red solid 1px"
-      document.getElementById("warningTextDescTask").style.display="block"
-    }else if(descriptionCorrect==true){
-      document.getElementById("newDescription").style.border="black solid 1px"
-      document.getElementById("warningTextDescTask").style.display="none"
+    if (descriptionCorrect == false) {
+      document.getElementById("newDescription").style.border = "red solid 1px";
+      document.getElementById("warningTextDescTask").style.display = "block";
+    } else if (descriptionCorrect == true) {
+      document.getElementById("newDescription").style.border =
+        "black solid 1px";
+      document.getElementById("warningTextDescTask").style.display = "none";
     }
-    if(descriptionCorrect&&titleCorrect){
-      document.getElementById("taskFormButton").setAttribute("class","hoverButtonGreen btn")
+    if (descriptionCorrect && titleCorrect) {
+      document
+        .getElementById("taskFormButton")
+        .setAttribute("class", "hoverButtonGreen btn");
     }
-  }
-  else{
+  } else {
     //get data
     let newItem = {
       id: itemID,
       title: document.getElementById(itemID).childNodes[0].childNodes[1].value,
-      description: document.getElementById(itemID).childNodes[0].childNodes[3].value,
+      description:
+        document.getElementById(itemID).childNodes[0].childNodes[3].value,
     };
     // console.log(newItem)
     // console.log(document.getElementById(itemID))
-     //check for errors
-    if(newItem.title.length<4 || newItem.title>40){
-      titleCorrect=false
+    //check for errors
+    if (newItem.title.length < 4 || newItem.title > 40) {
+      titleCorrect = false;
     }
-    if(newItem.description.length<4 || newItem.description.length>600){
-      descriptionCorrect=false
+    if (newItem.description.length < 4 || newItem.description.length > 600) {
+      descriptionCorrect = false;
     }
     // console.log(titleCorrect,descriptionCorrect)
 
     //if there are errors then show them to the user
-    if(titleCorrect==false){
-      document.getElementById(`taskEditName${itemID}`).style.border="red solid 1px"
-      document.getElementById(`warningTextTitleTask${itemID}`).style.display="block"
-    }else if(titleCorrect==true){
-      document.getElementById(`taskEditName${itemID}`).style.border="black solid 1px"
-      document.getElementById(`warningTextTitleTask${itemID}`).style.display="none"
+    if (titleCorrect == false) {
+      document.getElementById(`taskEditName${itemID}`).style.border =
+        "red solid 1px";
+      document.getElementById(`warningTextTitleTask${itemID}`).style.display =
+        "block";
+    } else if (titleCorrect == true) {
+      document.getElementById(`taskEditName${itemID}`).style.border =
+        "black solid 1px";
+      document.getElementById(`warningTextTitleTask${itemID}`).style.display =
+        "none";
     }
-    if(descriptionCorrect==false){
-      document.getElementById(`taskEditDescription${itemID}`).style.border="red solid 1px"
-      document.getElementById(`warningTextDescTask${itemID}`).style.display="block"
-
-    }else if(descriptionCorrect==true){
-      document.getElementById(`taskEditDescription${itemID}`).style.border="black solid 1px"
-      document.getElementById(`warningTextDescTask${itemID}`).style.display="none"
+    if (descriptionCorrect == false) {
+      document.getElementById(`taskEditDescription${itemID}`).style.border =
+        "red solid 1px";
+      document.getElementById(`warningTextDescTask${itemID}`).style.display =
+        "block";
+    } else if (descriptionCorrect == true) {
+      document.getElementById(`taskEditDescription${itemID}`).style.border =
+        "black solid 1px";
+      document.getElementById(`warningTextDescTask${itemID}`).style.display =
+        "none";
     }
-    if(descriptionCorrect&&titleCorrect){
-      document.getElementById(`taskFormButton${itemID}`).setAttribute("class","hoverButtonGreen btn")
+    if (descriptionCorrect && titleCorrect) {
+      document
+        .getElementById(`taskFormButton${itemID}`)
+        .setAttribute("class", "hoverButtonGreen btn");
     }
-
-
   }
-
 }
 
 //allows for editing of existing information about lists
@@ -784,20 +803,20 @@ function checkForErrors(itemID) {
 // }
 
 //allows for editing of existing information about lists
-function editListItems(id){
-  let values={
-    "id":id,
-    "completed":false,
-    "name":document.getElementById(id).childNodes[1].innerHTML,
-    "description":document.getElementById(id).childNodes[4].childNodes[1].innerHTML,
+function editListItems(id) {
+  let values = {
+    id: id,
+    completed: false,
+    name: document.getElementById(id).childNodes[1].innerHTML,
+    description:
+      document.getElementById(id).childNodes[4].childNodes[1].innerHTML,
   };
-  if(document.getElementById(id).classList.contains("selectedListItem")){
+  if (document.getElementById(id).classList.contains("selectedListItem")) {
     values.completed = true;
     let revertedName = values.name.slice(3);
     revertedName = revertedName.slice(0, -4);
-    values.name = revertedName;  
-  }
-  else{
+    values.name = revertedName;
+  } else {
     values.completed = false;
   }
   // console.log(document.getElementById(id).childNodes)
@@ -816,15 +835,17 @@ function editListItems(id){
   itemLabel.innerHTML = "Add name:";
   itemInput.value = `${values.name}`;
   descriptionBox.innerHTML = `${values.description}`;
-  warningText.innerHTML="The title needs to be between 4 and 40 characters long"
-  warningTextdesc.innerHTML="The description needs to be between 4 and 600 characters long"
+  warningText.innerHTML =
+    "The title needs to be between 4 and 40 characters long";
+  warningTextdesc.innerHTML =
+    "The description needs to be between 4 and 600 characters long";
   // //sets class and onclick
-  warningText.setAttribute("class","warningText")
-  warningTextdesc.setAttribute("class","warningText")
-  warningText.setAttribute("style","display:none")
-  warningTextdesc.setAttribute("style","display:none")
-  warningText.setAttribute("id",`warningTextTitleTask${id}`)
-  warningTextdesc.setAttribute("id",`warningTextDescTask${id}`)
+  warningText.setAttribute("class", "warningText");
+  warningTextdesc.setAttribute("class", "warningText");
+  warningText.setAttribute("style", "display:none");
+  warningTextdesc.setAttribute("style", "display:none");
+  warningText.setAttribute("id", `warningTextTitleTask${id}`);
+  warningTextdesc.setAttribute("id", `warningTextDescTask${id}`);
 
   acceptChangesButton.setAttribute("class", "hoverButtonGreen btn disabled");
   acceptChangesButton.setAttribute("id", `taskFormButton${id}`);
@@ -839,7 +860,10 @@ function editListItems(id){
     "onclick",
     `finishEditsForTasks('taskEditName${id}','taskEditDescription${id}',${id})`
   );
-  removeChangesButton.setAttribute("onclick", `revertEditsForTasks(${JSON.stringify(values)})`);
+  removeChangesButton.setAttribute(
+    "onclick",
+    `revertEditsForTasks(${JSON.stringify(values)})`
+  );
   itemLabel.setAttribute("class", "itemTitle w-100");
   // //appends elements
   inputBox.appendChild(itemLabel);
@@ -847,23 +871,22 @@ function editListItems(id){
   inputBox.appendChild(warningText);
   inputBox.appendChild(descriptionBox);
   inputBox.appendChild(warningTextdesc);
-  
-  while(document.getElementById(values.id).firstChild){
+
+  while (document.getElementById(values.id).firstChild) {
     // console.log(document.getElementById(id).firstChild)
-    document.getElementById(values.id).childNodes[0].remove()
+    document.getElementById(values.id).childNodes[0].remove();
   }
   document.getElementById(id).appendChild(inputBox);
   document.getElementById(id).appendChild(acceptChangesButton);
   document.getElementById(id).appendChild(removeChangesButton);
-
 }
 
 //finalizes edits for tasks
-function finishEditsForTasks(titleid,descid,editedID){
-  let values={
-    "id":editedID,
-    "name":document.getElementById(titleid).value,
-    "description":document.getElementById(descid).value,
+function finishEditsForTasks(titleid, descid, editedID) {
+  let values = {
+    id: editedID,
+    name: document.getElementById(titleid).value,
+    description: document.getElementById(descid).value,
   };
   // console.log(values)
   let listArchive = JSON.parse(localStorage.getItem("listArchive"));
@@ -878,25 +901,24 @@ function finishEditsForTasks(titleid,descid,editedID){
   // console.log(listTitle);
   let listData = JSON.parse(localStorage.getItem(listTitle));
   // console.log(listData)
-  listData.listItems.forEach((item)=>{
-    if(item.id==editedID){
+  listData.listItems.forEach((item) => {
+    if (item.id == editedID) {
       // console.log("Helo")
-      item.name=values.name;
-      item.description=values.description;
+      item.name = values.name;
+      item.description = values.description;
     }
-  })
+  });
   // console.log(listData)
-  localStorage.setItem(`${listTitle}`,JSON.stringify(listData))
-  revertEditsForTasks(values)
+  localStorage.setItem(`${listTitle}`, JSON.stringify(listData));
+  revertEditsForTasks(values);
 }
 
-
 //reverts edits for tasks
-function revertEditsForTasks(info){
+function revertEditsForTasks(info) {
   // console.log(info)
-  while(document.getElementById(info.id).firstChild){
+  while (document.getElementById(info.id).firstChild) {
     // console.log(document.getElementById(info.id).firstChild)
-    document.getElementById(info.id).childNodes[0].remove()
+    document.getElementById(info.id).childNodes[0].remove();
   }
 
   let itemInput = document.createElement("input");
@@ -935,19 +957,24 @@ function revertEditsForTasks(info){
   // //appends console
   document.getElementById("listItems").childNodes[0].appendChild(itemInput);
   document.getElementById("listItems").childNodes[0].appendChild(itemLabel);
-  document.getElementById("listItems").childNodes[0].appendChild(itemEditButton);
-  document.getElementById("listItems").childNodes[0].appendChild(itemRemoveButton);
+  document
+    .getElementById("listItems")
+    .childNodes[0].appendChild(itemEditButton);
+  document
+    .getElementById("listItems")
+    .childNodes[0].appendChild(itemRemoveButton);
   descriptionBox.appendChild(descriptionText);
   descriptionBox.appendChild(itemDescription);
-  document.getElementById("listItems").childNodes[0].appendChild(descriptionBox);
+  document
+    .getElementById("listItems")
+    .childNodes[0].appendChild(descriptionBox);
 }
-
 
 //runs functions needed for the website to work, once laoding has finished
 function initialLoad(reset) {
-  if(localStorage.getItem("listArchive")){
+  if (localStorage.getItem("listArchive")) {
     let listArchive = JSON.parse(localStorage.getItem("listArchive"));
-    currentListID = listArchive[0].id;  
+    currentListID = listArchive[0].id;
   }
   initializeData(reset);
   createLists();

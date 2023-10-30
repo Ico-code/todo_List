@@ -24,7 +24,7 @@ header {
   background-color: rgb(255, 188, 63);
 }
 #selectedTitle {
-    font-size: 2em;
+  font-size: 2em;
 }
 .listBody {
   margin-bottom: 10px;
@@ -62,7 +62,9 @@ article {
 .hoverButtonRed:hover {
   background-color: rgb(255, 64, 0);
 }
-.hoverButtonGreen,.hoverButtonRed {
+.hoverButtonGreen,
+.hoverButtonRed {
+  min-width: fit-content;
   transition: background-color 0.25s;
   margin-left: 5px;
 }
@@ -78,41 +80,51 @@ article {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-.checkbox{
+.checkbox {
   margin: 0px 5px;
 }
 .btn {
-    vertical-align: baseline !important;
+  vertical-align: baseline !important;
 }
 p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
-.itemTitle{
-    font-size: 1.1em;
-    font-weight: 500;
+.itemTitle {
+  font-size: 1.1em;
+  font-weight: 500;
 }
-.listOpener{
+.listOpener {
   transition: background-color 0.25s;
   padding: 10px;
   cursor: pointer;
   width: 100%;
 }
-.listOpener:hover{
+.listOpener:hover {
   background-color: rgb(255, 199, 95);
 }
-.clicker{
+.clicker {
   cursor: pointer;
 }
-.warningText{
+.warningText {
   color: red;
 }
-#warningTextTitleList,#warningTextDescList,#warningTextTitleTask,#warningTextDescTask{
+#warningTextTitleList,
+#warningTextDescList,
+#warningTextTitleTask,
+#warningTextDescTask {
   line-height: 1em;
-  padding-bottom: 5px;  
+  padding-bottom: 5px;
 }
-.disabled{
+.disabled {
   background-color: #969696;
 }
-textarea{
+textarea {
   min-width: 100%;
+}
+* {
+  word-break: break-all;
+}
+#listContainer,#selectedList{
+  overflow: auto;
+  max-height: 1200px;
 }
