@@ -794,7 +794,7 @@ function checkForErrors(itemID) {
   }
 }
 
-//allows for editing of existing information about lists
+//allows for editing of existing information about lists, currently not implemented
 // function editLists(id){
 //   let values={
 //     "title":"",
