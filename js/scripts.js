@@ -1,4 +1,5 @@
 var currentListID = "l0";
+initializeData;
 
 //Adds data to localstorage
 function addData(list) {
@@ -508,6 +509,9 @@ function openSelectedList(listid) {
   currentListID = listid;
   clearListItems();
   //Find list data
+  if(JSON.parse(localStorage.getItem("listArchive")).length==0){
+    return
+  }
   let listArchive = JSON.parse(localStorage.getItem("listArchive"));
   //   console.log(listArchive)
   let listTitle = "";
@@ -847,7 +851,7 @@ function editListItems(id) {
   warningText.setAttribute("id", `warningTextTitleTask${id}`);
   warningTextdesc.setAttribute("id", `warningTextDescTask${id}`);
 
-  acceptChangesButton.setAttribute("class", "hoverButtonGreen btn disabled");
+  acceptChangesButton.setAttribute("class", "hoverButtonGreen btn");
   acceptChangesButton.setAttribute("id", `taskFormButton${id}`);
   removeChangesButton.setAttribute("class", "hoverButtonRed btn");
   itemInput.setAttribute("type", "text");
@@ -954,25 +958,22 @@ function revertEditsForTasks(info) {
   itemInput.setAttribute("name", `${info.name}`);
   itemLabel.setAttribute("class", "itemTitle clicker");
   itemLabel.setAttribute("for", `${info.name}`);
-  // //appends console
-  document.getElementById("listItems").childNodes[0].appendChild(itemInput);
-  document.getElementById("listItems").childNodes[0].appendChild(itemLabel);
-  document
-    .getElementById("listItems")
-    .childNodes[0].appendChild(itemEditButton);
-  document
-    .getElementById("listItems")
-    .childNodes[0].appendChild(itemRemoveButton);
+  //appends
+  document.getElementById(info.id).appendChild(itemInput);
+  document.getElementById(info.id).appendChild(itemLabel);
+  document.getElementById(info.id).appendChild(itemEditButton);
+  document.getElementById(info.id).appendChild(itemRemoveButton);
   descriptionBox.appendChild(descriptionText);
   descriptionBox.appendChild(itemDescription);
-  document
-    .getElementById("listItems")
-    .childNodes[0].appendChild(descriptionBox);
+  document.getElementById(info.id).appendChild(descriptionBox);
 }
 
 //runs functions needed for the website to work, once laoding has finished
 function initialLoad(reset) {
-  if (localStorage.getItem("listArchive")) {
+  if (
+    localStorage.getItem("listArchive") &&
+    JSON.parse(localStorage.getItem("listArchive")).length != 0
+  ) {
     let listArchive = JSON.parse(localStorage.getItem("listArchive"));
     currentListID = listArchive[0].id;
   }
